@@ -14,5 +14,84 @@
  *= require_self
  */
  
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+ 
+.intro-header {
+  background-color: #ffdb82;
+  margin-bottom: 40px;
+  font-family: 'AvenirNext-Medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-bottom: 3px solid #13e051;
+}
+
+.intro-header .site-heading {
+  padding: 30px 0 20px;
+//  color: white;
+  text-align: center;
+}
+
+.site-heading h1 {
+  margin-top: 0;
+  font-size: 50px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+hr.small {
+  max-width: 100px;
+  margin: 15px auto;
+  border-width: 4px;
+  border-color: white;
+}
+
+.intro-header .site-heading .subheading {
+  font-size: 1.4em;
+  line-height: 1.1;
+  display: block;
+  margin: 10px 0 0;
+  margin-top: -3px;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.55em;
+  font-size: 17px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'AvenirNext-Medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 0px;
+}
+
+.content p {
+  margin-top: 18px;
+  margin-bottom: 17px;
+}
+
+.post-date {
+  font-family: 'AvenirNext-Medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+.post-date a:link,
+.post-date a:visited {
+  color: #ccc;
+}
+
+.post-date a:hover {
+  text-decoration: none;
+  color: rgba(70, 140, 220, 1.0);
+}
+
+.post-body {
+  margin-top: -12px;
+}
+
+.post {
+  margin-bottom: 43px;
+}

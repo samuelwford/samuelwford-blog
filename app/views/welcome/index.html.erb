@@ -1,4 +1,55 @@
-<h2>Hello World</h2>
-<p>
-  The time is now: <%= Time.now %>
-</p>
+<div class="post">
+  <div class="post-header">
+    <h2>@post.title</h2>
+    <div class="post-date"><a href="#">@post.published_at</a></div>
+  </div>
+  <div class="post-body">
+    <%= markdown "@post.body" %>
+    <p>body</p>
+    <blockquote>stuff</blockquote>
+    <p>things:
+      <ul>
+        <li>one</li>
+        <li>two</li>
+      </ul>
+    </p>
+  </div>
+</div>
+
+<div class="post">
+  <div class="post-header">
+    <h2>@post.title</h2>
+    <div class="post-date">@post.published_at</div>
+  </div>
+  <div class="post-body">
+    <%= markdown "@post.body" %>
+    <p>body</p>
+    <blockquote>stuff</blockquote>
+    <p>things:
+      <ul>
+        <li>one</li>
+        <li>two</li>
+      </ul>
+    </p>
+  </div>
+</div>
+
+<div class="post">
+  <div class="post-header">
+    <h2>@post.title</h2>
+    <div class="post-date">@post.published_at</div>
+  </div>
+  <div class="post-body">
+    <%= markdown "@post.body" %>
+    <p>body</p>
+    <blockquote>stuff</blockquote>
+    <p>things:
+      <ul>
+        <li>one</li>
+        <li>two</li>
+      </ul>
+    </p>
+  </div>
+</div>
+
+<a href="#">Archive</a>
