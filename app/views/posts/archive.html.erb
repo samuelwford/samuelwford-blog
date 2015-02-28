@@ -1,0 +1,12 @@
+<h3>Archive</h3>
+
+<p>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <%= link_to post.posted_at_formatted, post %>
+        <%= post.title %>
+      </li>
+    <% end %>
+  </ul>
+</p>

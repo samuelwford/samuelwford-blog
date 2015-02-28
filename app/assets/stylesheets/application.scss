@@ -36,6 +36,11 @@
   font-family: 'Georgia', 'Times New Roman', serif;
 }
 
+.site-heading a {
+  text-decoration: none;
+  color: black;
+}
+
 hr.small {
   max-width: 100px;
   margin: 15px auto;
@@ -74,13 +79,13 @@ h6 {
 
 .post-date {
   font-family: 'AvenirNext-Medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #ccc;
+  color: #aaa;
   font-size: 0.9em;
 }
 
 .post-date a:link,
 .post-date a:visited {
-  color: #ccc;
+  color: #aaa;
 }
 
 .post-date a:hover {
@@ -94,4 +99,21 @@ h6 {
 
 .post {
   margin-bottom: 43px;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: HelveticaNeue;
+  font-size: 1em;
+}
+
+.footer {
+  margin-top: 50px;
+}
+
+.hr img { 
+  position: relative;
+  top: -60px;
+  bottom: auto;
+  margin-bottom: -50px;
 }
