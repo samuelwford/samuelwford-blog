@@ -3,6 +3,13 @@ class PostsController < ApplicationController
     @posts = Post.where(published: true).order(posted_at: :desc).take(10)
   end
   
+  def feed
+    @posts = Post.where(published: true).order(posted_at: :desc).take(10)
+    respond_to do |format|
+      format.rss { render :layout => false }
+    end
+  end
+  
   def show
     @post = Post.find(params[:id])
   end
