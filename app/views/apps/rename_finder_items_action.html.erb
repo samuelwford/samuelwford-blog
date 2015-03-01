@@ -1,0 +1,48 @@
+<% content_for :title, 'Rename Finder Items Action - Samuel Ford' %>
+
+<h2>Rename Finder Items Action</h2>
+
+<p>
+  Automator is superb for throwing together simple workflows for things you do all the time or for repetitive 
+  actions on groups of files, photos, movies, etc and it has a pretty good set of built in actions. The only 
+  built in file rename action, _Rename Finder Items_, can do simple replacements or date/time and sequential 
+  renaming but if you need to do something more complex, you're out of luck.
+</p>
+
+<%= image_tag 'rename-screenshot.png', class: 'img-responsive center-block' %>
+
+<p>
+  <em>Rename Finder Items by Pattern</em> is an Automator action that is similar to the built in <em>Rename 
+  Finder Items</em> action that can handle pattern matches with wildcards like this:
+
+  <ul>
+    <li>Input File: <code>Screen shot 2015-02-13 at 7.35.03 PM</code></li>
+    <li>Search For: <code>Screen shot * at * *M</code></li>
+    <li>Replace With: <code>$1-$2-$3M</code></li>
+    <li>Output File: <code>2015-02-13-7.35.03-PM</code></li>
+  </ul>
+</p>
+
+<p>
+  You can use as many wildcards as you like in the search pattern. You can use any of them as many times as you 
+  like in the replacement pattern by number preceded by a "$". If no match is found for a wildcard, it is 
+  substituted with a blank in the replacement pattern.
+</p>
+
+<p>
+  It's available for free for anyone to use or modify.
+</p>
+
+<p>
+  Go grab the source or the 0.1 build packaged in a DMG from 
+  <a href="https://github.com/samuelwford/rename-finder-items-by-pattern">GitHub</a> and give it a whirl.
+</p>
+
+<h4>Notes</h4>
+
+<p>
+  Originally, I intended to create an action that used regular expressions for search and replace, but ran 
+  into difficulties getting Xcode to generate a bundle with an embedded framework 
+  (<a href="http://regexkit.sourceforge.net/">RegexKit</a> in this case) that would load properly when Automator 
+  loaded the action bundle. Hopefully, I'll figure out how and the next version will be much more powerful.
+</p>
