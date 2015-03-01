@@ -53,4 +53,4 @@ gem 'redcarpet'
 gem 'bootstrap_form'
 
 gem 'paperclip', '~> 3.0'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
