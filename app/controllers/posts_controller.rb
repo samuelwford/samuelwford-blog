@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
   
   def index
-    @posts = Post.where(published: true).order(posted_at: :desc).take(10)
+    @posts = Post.where(published: true).order(posted_at: :desc).take(5)
   end
   
   def feed
-    @posts = Post.where(published: true).order(posted_at: :desc).take(10)
+    @posts = Post.where(published: true).order(posted_at: :desc)
     respond_to do |format|
       format.rss { render :layout => false }
     end
