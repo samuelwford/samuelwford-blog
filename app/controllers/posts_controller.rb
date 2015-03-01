@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update]
+  
   def index
     @posts = Post.where(published: true).order(posted_at: :desc).take(10)
   end
@@ -11,7 +13,6 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post = Post.find(params[:id])
   end
   
   def new
@@ -19,30 +20,34 @@ class PostsController < ApplicationController
   end
   
   def edit
-    @post = Post.find(params[:id])
   end
   
   def create
     @post = Post.new(post_params)
     @post.posted_at = DateTime.now
-    @post.save
-    
-    if @post.published
-      redirect_to @post
+
+    if @post.save
+      if @post.published
+        redirect_to @post
+      else
+        redirect_to unpublished_path
+      end
     else
-      redirect_to unpublished_path
+      render 'new'
     end
   end
   
   def update
-    @post = Post.find(params[:id])
     @post.update(post_params)
-    @post.save
     
-    if @post.published
-      redirect_to @post
+    if @post.save
+        if @post.published
+        redirect_to @post
+      else
+        redirect_to unpublished_path
+      end
     else
-      redirect_to unpublished_path
+      render 'edit'
     end
   end
   
@@ -56,7 +61,11 @@ class PostsController < ApplicationController
   
   private
   
+  def set_post
+    @post = Post.find(params[:id])
+  end
+  
   def post_params
-    params.require(:post).permit(:title, :posted_at, :published, :body)
+    params.require(:post).permit(:title, :posted_at, :published, :key, :body)
   end
 end
