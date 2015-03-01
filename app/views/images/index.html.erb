@@ -1,0 +1,13 @@
+<% content_for :title, 'Images - Samuel Ford' %>
+
+<ul class="list-group">
+<% @images.each do |image| %>
+  <li class="list-group-item">
+    <%= image_tag image.file.url(:thumb) %>
+    <%= link_to image.name, image.file.url %>
+    <%= link_to 'Edit', edit_image_path(image), class: 'btn btn-default btn-sm pull-right' %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to 'New Image', new_image_path, class: 'btn btn-default' %>
