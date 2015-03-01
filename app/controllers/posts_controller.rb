@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(post_params)
-    @post.posted_at = DateTime.now
+    @post.posted_at = DateTime.now if @post.posted_at.nil?
 
     if @post.save
       if @post.published
