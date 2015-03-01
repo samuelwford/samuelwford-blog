@@ -34,6 +34,7 @@
   margin-top: 0;
   font-size: 50px;
   font-family: 'Georgia', 'Times New Roman', serif;
+  padding-right: 10px;
 }
 
 .site-heading a {
@@ -133,4 +134,12 @@ h6 {
   top: -60px;
   bottom: auto;
   margin-bottom: -50px;
+}
+
+.top-links {
+  margin-top: 29px;
+}
+
+.top-links a {
+  padding-right: 10px;
 }
