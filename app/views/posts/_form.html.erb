@@ -1,5 +1,6 @@
 <%= bootstrap_form_for @post do |f| %>
   <%= f.text_field :title, autofocus: true %>
+  <%= f.text_field :slug %>
   <%= f.check_box :published %>
   <%= f.datetime_local_field :posted_at %>
   <%= f.text_field :key %>

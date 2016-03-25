@@ -6,7 +6,7 @@
   <ul>
     <% @posts.each do |post| %>
       <li>
-        <%= link_to post.posted_at_formatted, post %>
+        <%= link_to post.posted_at_formatted, post_path(post.slug_or_id) %>
         <%= post.title %>
       </li>
     <% end %>

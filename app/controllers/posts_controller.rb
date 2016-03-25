@@ -57,15 +57,16 @@ class PostsController < ApplicationController
   
   def unpublished
     @posts = Post.where(published: false).order(posted_at: :desc)
+    @published_posts = Post.where(published: true).order(posted_at: :desc)
   end
   
   private
   
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by(slug: params[:id]) || Post.find(params[:id])
   end
   
   def post_params
-    params.require(:post).permit(:title, :posted_at, :published, :key, :body)
+    params.require(:post).permit(:title, :posted_at, :published, :key, :body, :slug)
   end
 end
