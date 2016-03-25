@@ -45,7 +45,7 @@ end
 
 gem 'rails_12factor', group: :production
 
-ruby '2.2.0'
+ruby '2.2.2'
 gem 'puma'
 
 gem 'bootstrap-sass', '~> 3.3.3'
