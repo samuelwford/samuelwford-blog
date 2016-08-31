@@ -1,7 +1,9 @@
 <% content_for :title, 'Samuel Ford' %>
 
-<% @posts.each do |post| %>
-  <%= render post %>
+<% cache do %>
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
 <% end %>
 
 <%= link_to 'Archive', archive_path %> -

@@ -1,5 +1,7 @@
 <% content_for :title, "#{@post.title} - Samuel Ford" %>
 
-<%= render @post %>
+<% cache(@post) do %>
+  <%= render @post %>
+<% end %>
 
 <%= link_to 'Home', root_path %>
