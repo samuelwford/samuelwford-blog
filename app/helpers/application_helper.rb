@@ -1,7 +1,14 @@
+require 'redcarpet/render_strip'
+
 module ApplicationHelper
   def markdown(content)
     @markdown ||= Redcarpet::Markdown.new(ImageReplacer, autolink: true, space_after_headers: true, fenced_code_blocks: true)
     @markdown.render(content).html_safe
+  end
+  
+  def plaintext(content)
+    @plaintext ||= Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
+    @plaintext.render(content)
   end
 end
 

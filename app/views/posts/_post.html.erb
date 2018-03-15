@@ -1,3 +1,10 @@
+<% content_for :head do %>
+  <meta property="og:title" description="<%= post.title %>">
+  <meta property="og:description" description="<%= plaintext post.teaser %>">
+  <meta property="og:site_name" description="Samuel Ford's Blog">
+  <meta property="og:url" description="<%= post_path(post.slug_or_id) %>">
+  <meta property="og:type" description="blog">
+<% end %>
 <div class="post">
   <div class="post-header">
     <h2><%= post.title %></h2>

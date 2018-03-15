@@ -17,4 +17,8 @@ class Post < ActiveRecord::Base
   def posted_at_formatted
     posted_at.strftime('%B %e, %Y')
   end
+  
+  def teaser
+    body.split("\r\n\r\n", 2)[0] # try to return the first paragraph
+  end
 end
