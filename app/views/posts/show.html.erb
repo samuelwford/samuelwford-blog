@@ -1,5 +1,13 @@
 <% content_for :title, "#{@post.title} - Samuel Ford" %>
 
+<% content_for :head do %>
+  <meta property="og:title" content="<%= @post.title %>">
+  <meta property="og:description" content="<%= plaintext @post.teaser %>">
+  <meta property="og:site_name" content="Samuel Ford's Blog">
+  <meta property="og:url" content="<%= post_path(@post.slug_or_id) %>">
+  <meta property="og:type" content="blog">
+<% end %>
+
 <%= render @post %>
 
 <%= link_to 'Home', root_path %>
