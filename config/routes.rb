@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :images
   
-  get 'game-friends', to: 'apps#game_friends', as: :game_friends
-  get 'the-fox-and-the-grapes', to: 'apps#the_fox_and_the_grapes', as: :the_fox_and_the_grapes
   get 'rename-finder-items-action', to: 'apps#rename_finder_items_action', as: :rename_finder_items_action
   get 'snippose', to: 'apps#snippose', as: :snippose
 end
