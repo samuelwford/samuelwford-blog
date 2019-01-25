@@ -3,8 +3,12 @@
 <ul class="list-group">
 <% @images.each do |image| %>
   <li class="list-group-item">
-    <%= image_tag image.picture.variant(resize: "100x100") %>
-    <%= link_to image.name, image.picture %>
+    <% if image.picture.attached? %>
+      <%= image_tag image.picture.variant(resize: "100x100") %>
+      <%= link_to image.name, image.picture %>
+    <% else %>
+      <%= image.name %>
+    <% end %>
     <%= link_to 'Edit', edit_image_path(image), class: 'btn btn-default btn-sm pull-right' %>
   </li>
 <% end %>

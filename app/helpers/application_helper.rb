@@ -17,6 +17,12 @@ class ImageReplacer < Redcarpet::Render::HTML
   
   def image(link, alt_text, title)
     image = Image.find_by_name(link)
+    if image && image.picture.attached?
+      image_tag make_url(image.picture), alt: alt_text, title: title, class: "img-responsive"
+    else
+      image_tag link, alt: alt_text, title: title, class: "img-responsive"
+    end
+
     image_tag image ? make_url(image.picture) : link, alt: alt_text, title: title, class: "img-responsive"
   end
 
