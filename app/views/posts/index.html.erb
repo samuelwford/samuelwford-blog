@@ -5,3 +5,8 @@
 <%= link_to 'Archive', archive_path %> -
 <%= link_to 'Snipposé', snippose_path %> -
 <%= link_to 'Rename Finder Items', rename_finder_items_action_path %>
+
+<% if in_the_backdoor? %>
+  - <%= link_to 'Unpublished', unpublished_path %>
+  - <%= link_to 'Images', images_path %>
+<% end %>
