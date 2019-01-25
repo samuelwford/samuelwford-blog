@@ -17,6 +17,12 @@ class ImageReplacer < Redcarpet::Render::HTML
   
   def image(link, alt_text, title)
     image = Image.find_by_name(link)
-    image_tag image ? image.file.url : link, alt: alt_text, title: title, class: "img-responsive"
+    image_tag image ? make_url(image.picture) : link, alt: alt_text, title: title, class: "img-responsive"
+  end
+
+  private
+
+  def make_url(attachment)
+    Rails.application.routes.url_helpers.rails_blob_path(attachment, only_path: true)
   end
 end
