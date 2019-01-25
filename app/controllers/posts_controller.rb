@@ -40,14 +40,19 @@ class PostsController < ApplicationController
   def update
     @post.update(post_params)
     
-    if @post.save
-        if @post.published
-        redirect_to @post
-      else
-        redirect_to unpublished_path
-      end
+    if post_params[:title].downcase == 'delete' && post_params[:key] == Rails.configuration.post_key
+      @post.destroy
+      redirect_to posts_path
     else
-      render 'edit'
+      if @post.save
+          if @post.published
+          redirect_to @post
+        else
+          redirect_to unpublished_path
+        end
+      else
+        render 'edit'
+      end
     end
   end
   
