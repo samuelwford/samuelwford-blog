@@ -75,6 +75,3 @@ gem 'puma'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'redcarpet'
 gem 'bootstrap_form'
-
-gem 'paperclip', '~> 3.0'
-gem 'aws-sdk', '< 2.0'
