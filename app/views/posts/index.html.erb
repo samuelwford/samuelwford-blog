@@ -1,8 +1,6 @@
 <% content_for :title, 'Samuel Ford' %>
 
-<% @posts.each do |post| %>
-  <%= render post %>
-<% end %>
+<% render @posts %>
 
 <%= link_to 'Archive', archive_path %> -
 <%= link_to 'Snipposé', snippose_path %> -
