@@ -115,14 +115,24 @@ h6 {
   margin-top: 0px;
 }
 
+.post-body table {
+  @extend .table
+}
+
+.post-body 
+
 .post {
   margin-bottom: 57px;
 }
 
-.form-group input,
-.form-group textarea {
+.form-group input {
   font-family: HelveticaNeue;
   font-size: 1em;
+}
+
+.form-group textarea {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8em;
 }
 
 .footer {
