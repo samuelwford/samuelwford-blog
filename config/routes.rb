@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   
   get 'rename-finder-items-action', to: 'apps#rename_finder_items_action', as: :rename_finder_items_action
   get 'snippose', to: 'apps#snippose', as: :snippose
+  get 'mdx', to: 'apps#mdx', as: :mdx
+  
 end
